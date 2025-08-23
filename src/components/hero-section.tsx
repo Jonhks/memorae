@@ -6,6 +6,7 @@ import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { HeroHeader } from "./header";
+import { useTranslations } from "next-intl";
 
 const transitionVariants = {
   item: {
@@ -28,6 +29,7 @@ const transitionVariants = {
 };
 
 export default function HeroSection() {
+  const t = useTranslations("HomePage");
   return (
     <>
       <HeroHeader />
@@ -109,7 +111,7 @@ export default function HeroSection() {
                   as="h1"
                   className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]"
                 >
-                  Modern Solutions for Customer Engagement
+                  {t("title")}
                 </TextEffect>
                 <TextEffect
                   per="line"
