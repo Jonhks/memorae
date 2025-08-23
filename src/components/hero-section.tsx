@@ -166,7 +166,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <AnimatedGroup
+            {/* <AnimatedGroup
               variants={{
                 container: {
                   visible: {
@@ -179,7 +179,7 @@ export default function HeroSection() {
                 ...transitionVariants,
               }}
             >
-              {/* <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+              <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                 <div
                   aria-hidden
                   className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
@@ -200,8 +200,8 @@ export default function HeroSection() {
                     height="1440"
                   />
                 </div>
-              </div> */}
-            </AnimatedGroup>
+              </div>
+            </AnimatedGroup> */}
           </div>
         </section>
         <section className="bg-background pb-16 pt-16 md:pb-32">
