@@ -120,3 +120,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+* {
+  background-color: oklch(0.147 0.004 49.25);
+  color: white;
+}
