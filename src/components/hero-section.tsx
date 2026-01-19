@@ -175,7 +175,7 @@ export default function HeroSection() {
                     className="h-10.5 rounded-xl px-5"
                   >
                     <Link href="#link">
-                      <span className="text-nowrap">
+                      <span className="text-wrap">
                         {t("btnActionUnirse")}
                       </span>
                     </Link>
