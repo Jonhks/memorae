@@ -13,7 +13,7 @@ import HowItWorks from "./HowItWorks";
 import { Experiences } from "./Experiences";
 import { Privacy } from "./Privacy";
 import { Plans } from "./Plans";
-// import { Waitlist } from "./Waitlist";
+import { Waitlist } from "./Waitlist";
 
 const transitionVariants = {
   item: {
@@ -184,7 +184,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+            <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20">
               <div
                 aria-hidden
                 className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-85%"
@@ -253,9 +253,9 @@ export default function HeroSection() {
                   <section>
                     <Plans />
                   </section>
-                  {/* <section>
+                  <section id="contacto" className="scroll-mt-24 pb-12">
                     <Waitlist />
-                  </section> */}
+                  </section>
                 </AnimatedGroup>
               </div>
             </div>

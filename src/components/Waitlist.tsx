@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
@@ -9,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function Waitlist() {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -22,11 +24,13 @@ export function Waitlist() {
     try {
       await addDoc(collection(db, "leads"), {
         email,
+        message,
         createdAt: serverTimestamp(),
       });
 
       setSuccess(true);
       setEmail("");
+      setMessage("");
     } catch (err) {
       console.error(err);
       setError("No pudimos guardar tu correo. Intenta de nuevo.");
@@ -57,6 +61,13 @@ export function Waitlist() {
             onChange={(e) => setEmail(e.target.value)}
             required
             disabled={loading || success}
+          />
+          <Textarea
+             placeholder="Tu mensaje..."
+             value={message}
+             onChange={(e) => setMessage(e.target.value)}
+             disabled={loading || success}
+             className="min-h-[100px]"
           />
 
           <Button
