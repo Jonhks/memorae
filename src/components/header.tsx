@@ -2,7 +2,7 @@
 import Link from "next/link";
 import logo2 from "../assets/logo/logo.svg";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
@@ -30,32 +30,32 @@ export const HeroHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   // Botón sencillo para cambiar idioma
-  function LocaleButton() {
-    const [locale, setLocale] = React.useState("en");
-    React.useEffect(() => {
-      if (typeof window !== "undefined") {
-        const pathParts = window.location.pathname.split("/");
-        setLocale(pathParts[1] === "es" ? "es" : "en");
-      }
-    }, []);
-    const otherLocale = locale === "en" ? "es" : "en";
-    const handleClick = () => {
-      if (typeof window !== "undefined") {
-        const pathParts = window.location.pathname.split("/");
-        pathParts[1] = otherLocale;
-        window.location.pathname = pathParts.join("/");
-      }
-    };
-    return (
-      <button
-        onClick={handleClick}
-        className="ml-2 rounded px-2 py-1 border border-muted-foreground bg-background text-muted-foreground hover:bg-muted-foreground hover:text-background transition-colors text-xs"
-        aria-label={`Cambiar idioma a ${otherLocale}`}
-      >
-        {otherLocale.toUpperCase()}
-      </button>
-    );
-  }
+  // function LocaleButton() {
+  //   const [locale, setLocale] = React.useState("en");
+  //   React.useEffect(() => {
+  //     if (typeof window !== "undefined") {
+  //       const pathParts = window.location.pathname.split("/");
+  //       setLocale(pathParts[1] === "es" ? "es" : "en");
+  //     }
+  //   }, []);
+  //   const otherLocale = locale === "en" ? "es" : "en";
+  //   const handleClick = () => {
+  //     if (typeof window !== "undefined") {
+  //       const pathParts = window.location.pathname.split("/");
+  //       pathParts[1] = otherLocale;
+  //       window.location.pathname = pathParts.join("/");
+  //     }
+  //   };
+  //   return (
+  //     <button
+  //       onClick={handleClick}
+  //       className="ml-2 rounded px-2 py-1 border border-muted-foreground bg-background text-muted-foreground hover:bg-muted-foreground hover:text-background transition-colors text-xs"
+  //       aria-label={`Cambiar idioma a ${otherLocale}`}
+  //     >
+  //       {otherLocale.toUpperCase()}
+  //     </button>
+  //   );
+  // }
 
   React.useEffect(() => {
     if (darkMode) {

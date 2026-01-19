@@ -2,16 +2,18 @@
 function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(" ");
 }
+//
+import { logo3 } from "@/assets/logos";
 
-import { logo1, logo2, logo3 } from "@/assets/logos";
-
-export const Logo = ({
-  className,
-  uniColor,
-}: {
-  className?: string;
-  uniColor?: boolean;
-}) => {
+export const Logo = (
+  {
+    // className,
+    // uniColor,
+  }: {
+    className?: string;
+    uniColor?: boolean;
+  },
+) => {
   return logo3;
 };
 
