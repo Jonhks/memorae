@@ -253,9 +253,6 @@ export default function HeroSection() {
                   <section>
                     <Plans />
                   </section>
-                  <section id="contacto" className="scroll-mt-24 pb-12">
-                    <Waitlist />
-                  </section>
                 </AnimatedGroup>
               </div>
             </div>
