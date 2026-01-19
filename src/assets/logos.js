@@ -7,9 +7,9 @@ export const logo1 = (
     role="img"
     aria-labelledby="title desc"
   >
-    <title>Memorae - Opción C (Ribbon)</title>
+    <title>intime - Opción C (Ribbon)</title>
     <desc>
-      M dorada formada por cintas con ángulos, y MEMORAE debajo en negro.
+      M dorada formada por cintas con ángulos, y intime debajo en negro.
     </desc>
     <defs>
       <linearGradient
@@ -49,7 +49,7 @@ export const logo1 = (
       font-weight="700"
       letter-spacing="10"
     >
-      MEMORAE
+      intime
     </text>
   </svg>
 );
@@ -63,9 +63,9 @@ export const logo2 = (
     role="img"
     aria-labelledby="title desc"
   >
-    <title>Memorae - Opción B (Geométrica)</title>
+    <title>intime - Opción B (Geométrica)</title>
     <desc>
-      M monograma construida con formas geométricas doradas y el texto MEMORAE
+      M monograma construida con formas geométricas doradas y el texto intime
       debajo en negro.
     </desc>
     {/* Remove <style> and use inline styles or className */}
@@ -97,7 +97,7 @@ export const logo2 = (
       points="460,250 420,250 480,120 570,120"
     />
 
-    {/* Palabra MEMORAE */}
+    {/* Palabra intime */}
     <text
       x="400"
       y="420"
@@ -107,7 +107,7 @@ export const logo2 = (
       fontWeight="700"
       letterSpacing="10"
     >
-      MEMORAE
+      intime
     </text>
   </svg>
 );
@@ -121,9 +121,9 @@ export const logo3 = (
     role="img"
     aria-labelledby="title desc"
   >
-    <title>Memorae - Opción B (Geométrica)</title>
+    <title>intime - Opción B (Geométrica)</title>
     <desc>
-      M monograma construida con formas geométricas doradas y el texto MEMORAE
+      M monograma construida con formas geométricas doradas y el texto intime
       debajo en negro.
     </desc>
     <defs></defs>
@@ -154,7 +154,7 @@ export const logo3 = (
       points="460,250 420,250 480,120 570,120"
     />
 
-    {/* Palabra MEMORAE */}
+    {/* Palabra intime */}
     <text
       x="400"
       y="420"
@@ -164,7 +164,7 @@ export const logo3 = (
       fontWeight="700"
       letterSpacing="10"
     >
-      MEMORAE
+      intime
     </text>
   </svg>
 );
