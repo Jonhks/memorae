@@ -2,6 +2,8 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 
 import { HeroHeader } from "@/components/header";
 import HeroSection from "@/components/hero-section";
+import { Footer } from "@/components/Footer";
+import { Waitlist } from "@/components/Waitlist";
 
 interface HomeProps {
   params: {
@@ -19,9 +21,10 @@ export default async function Home({ params }: HomeProps) {
 
   return (
     <div>
-      {t("title")}
       <HeroHeader />
       <HeroSection />
+      <Waitlist />
+      <Footer />
     </div>
   );
 }

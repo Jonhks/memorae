@@ -1,5 +1,14 @@
 {
+  "Header": {
+    "menuItem1": "Inicio",
+    "menuItem2": "¿Qué es?",
+    "menuItem3": "¿Como funciona?",
+    "menuItem4": "Contacto"
+  },
   "HomePage": {
-    "title": "Hola mundo!"
+    "title": "¿Has pensado qué pasará cuando ya no estés?",
+    "secondSubtitle": "Si ya dijiste todo lo que importaba.\nSi las personas correctas sabrán lo que sentías.",
+    "btnActionInicio": "Si te interesa, contactanos",
+    "btnActionUnirse": "Un espacio seguro para guardar mensajes, deseos y decisiones que serán entregados en el momento correcto"
   }
 }

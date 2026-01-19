@@ -7,6 +7,13 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { HeroHeader } from "./header";
 import { useTranslations } from "next-intl";
+import ImgBosque from "../assets/img/playa.png";
+import { Card, CardContent } from "@/components/ui/card";
+import HowItWorks from "./HowItWorks";
+import { Experiences } from "./Experiences";
+import { Privacy } from "./Privacy";
+import { Plans } from "./Plans";
+// import { Waitlist } from "./Waitlist";
 
 const transitionVariants = {
   item: {
@@ -42,7 +49,7 @@ export default function HeroSection() {
           <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
           <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
         </div>
-        <section>
+        <section id="hero">
           <div className="relative pt-24 md:pt-36">
             <AnimatedGroup
               variants={{
@@ -59,7 +66,7 @@ export default function HeroSection() {
                     y: 20,
                   },
                   visible: {
-                    opacity: 1,
+                    opacity: 0.5,
                     y: 0,
                     transition: {
                       type: "spring",
@@ -69,14 +76,15 @@ export default function HeroSection() {
                   },
                 },
               }}
-              className="absolute inset-0 -z-20"
+              className="absolute inset-0 -z-20 "
             >
               <Image
-                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                alt="background"
-                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
+                src={ImgBosque}
+                alt="imgBosque"
+                className="absolute inset-x-0 top-80 -z-20 lg:top-32 dark:block object-bottom"
                 width="3276"
                 height="4095"
+                priority
               />
             </AnimatedGroup>
             <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
@@ -84,11 +92,11 @@ export default function HeroSection() {
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
                   <Link
-                    href="#link"
+                    href="#contacto"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                   >
                     <span className="text-foreground text-sm">
-                      Introducing Support for AI Models
+                      {t("btnActionInicio")}
                     </span>
                     <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
@@ -109,20 +117,26 @@ export default function HeroSection() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]"
+                  className="mt-6 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]"
                 >
                   {t("title")}
                 </TextEffect>
+                {/* <TextEffect
+                  preset="fade-in-blur"
+                  speedSegment={0.3}
+                  className="mt-0 text-balance text-4xl md:text-6xl lg:mt-8 xl:text-[4.25rem]"
+                >
+                  {t("subtitle")}
+                </TextEffect> */}
                 <TextEffect
                   per="line"
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   delay={0.5}
                   as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-lg"
+                  className="mx-auto mt-8 max-w-3xl text-balance text-lg"
                 >
-                  Highly customizable components for building modern websites
-                  and applications that look and feel the way you mean it.
+                  {t("secondSubtitle")}
                 </TextEffect>
 
                 <AnimatedGroup
@@ -139,7 +153,7 @@ export default function HeroSection() {
                   }}
                   className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
                 >
-                  <div
+                  {/* <div
                     key={1}
                     className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
                   >
@@ -152,7 +166,7 @@ export default function HeroSection() {
                         <span className="text-nowrap">Start Building</span>
                       </Link>
                     </Button>
-                  </div>
+                  </div> */}
                   <Button
                     key={2}
                     asChild
@@ -161,14 +175,16 @@ export default function HeroSection() {
                     className="h-10.5 rounded-xl px-5"
                   >
                     <Link href="#link">
-                      <span className="text-nowrap">Request a demo</span>
+                      <span className="text-nowrap">
+                        {t("btnActionUnirse")}
+                      </span>
                     </Link>
                   </Button>
                 </AnimatedGroup>
               </div>
             </div>
 
-            {/* <AnimatedGroup
+            <AnimatedGroup
               variants={{
                 container: {
                   visible: {
@@ -184,124 +200,64 @@ export default function HeroSection() {
               <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                 <div
                   aria-hidden
-                  className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
+                  className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-85%"
                 />
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                  <Image
-                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                    src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                    alt="app screen"
-                    width="2700"
-                    height="1440"
-                  />
-                  <Image
-                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                    src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                    alt="app screen"
-                    width="2700"
-                    height="1440"
-                  />
+                  <section
+                    id="que-es"
+                    className="w-full py-24 px-6 scroll-mt-24"
+                  >
+                    <div className="mx-auto max-w-3xl text-center">
+                      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-8">
+                        ¿Qué es inTime?
+                      </h2>
+
+                      <Card className="bg-transparent border-none shadow-none">
+                        <CardContent className="p-0 space-y-6 text-lg text-muted-foreground leading-relaxed">
+                          <p>
+                            inTime es un espacio privado donde las personas
+                            pueden dejar mensajes para quienes forman parte de
+                            su vida. Mensajes que no siempre pueden decirse a
+                            tiempo, pero que merecen ser leídos.
+                          </p>
+
+                          <p>
+                            Cada mensaje es personal, confidencial y dirigido a
+                            alguien específico. El usuario decide qué decir, a
+                            quién va dirigido y <strong>NOSOTROS</strong> nos
+                            encargamos de que sea recibido a tiempo.
+                          </p>
+
+                          <p className="text-foreground font-medium">
+                            inTime no es una red social ni un lugar público. Es
+                            un espacio íntimo para dejar palabras, decisiones y
+                            deseos que importan.
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </section>
+                  <section
+                    id="funciona"
+                    className="scroll-mt-24"
+                  >
+                    <HowItWorks />
+                  </section>
+                  <section>
+                    <Experiences />
+                  </section>
+                  <section>
+                    <Privacy />
+                  </section>
+                  <section>
+                    <Plans />
+                  </section>
+                  {/* <section>
+                    <Waitlist />
+                  </section> */}
                 </div>
               </div>
-            </AnimatedGroup> */}
-          </div>
-        </section>
-        <section className="bg-background pb-16 pt-16 md:pb-32">
-          <div className="group relative m-auto max-w-5xl px-6">
-            <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-              <Link
-                href="/"
-                className="block text-sm duration-150 hover:opacity-75"
-              >
-                <span> Meet Our Customers</span>
-
-                <ChevronRight className="ml-1 inline-block size-3" />
-              </Link>
-            </div>
-            {/* <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-              <div className="flex">
-                <Image
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                  alt="Nvidia Logo"
-                  height={20}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-
-              <div className="flex">
-                <Image
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/column.svg"
-                  alt="Column Logo"
-                  height={16}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-              <div className="flex">
-                <Image
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/github.svg"
-                  alt="GitHub Logo"
-                  height={16}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-              <div className="flex">
-                <Image
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nike.svg"
-                  alt="Nike Logo"
-                  height={20}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-              <div className="flex">
-                <Image
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                  alt="Lemon Squeezy Logo"
-                  height={20}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-              <div className="flex">
-                <Image
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/laravel.svg"
-                  alt="Laravel Logo"
-                  height={16}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-              <div className="flex">
-                <Image
-                  className="mx-auto h-7 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lilly.svg"
-                  alt="Lilly Logo"
-                  height={28}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-
-              <div className="flex">
-                <Image
-                  className="mx-auto h-6 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/openai.svg"
-                  alt="OpenAI Logo"
-                  height={24}
-                  width={80}
-                  unoptimized
-                />
-              </div>
-            </div> */}
+            </AnimatedGroup>
           </div>
         </section>
       </main>

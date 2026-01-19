@@ -1,5 +1,15 @@
 {
+  "Header": {
+    "menuItem1": "Home",
+    "menuItem2": "About",
+    "menuItem3": "Plans",
+    "menuItem4": "Contact"
+  },
   "HomePage": {
-    "title": "Hello World!"
+    "title": "Don't leave questions unanswered.",
+    "subtitle": "Leave your plan, leave your voice.",
+    "secondSubtitle": "A safe space to store messages, wishes, and decisions that will be delivered at the right time.",
+    "btnActionInicio": "If you're interested, contact us",
+    "btnActionUnirse": "I want to be part"
   }
 }
